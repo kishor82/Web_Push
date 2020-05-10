@@ -9,7 +9,15 @@ self.addEventListener('push', function (event) {
       body: _data.message,
       icon: _data.icon,
       tag: _data.tag,
-      vibrate: [500,110,500,110,450,110,200,110,170,40,450,110,200,110,170,40,500]
+      badge: _data.badge,
+      requireInteraction: true,
+      actions: [
+        {
+          action: 'coffee-action',
+          title: 'Coffee',
+          icon: 'https://cdn3.iconfinder.com/data/icons/happy-x-mas/501/santa15-128.png'
+        },
+      ]
     })
   )
 })
