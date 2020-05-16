@@ -6,9 +6,9 @@ self.addEventListener('push', function (e) {
     self.registration.showNotification(_data.title, {
       body: _data.message,
       data: { url: self.location.origin },
-      icon: _data.icon,
+      icon: `${self.location.origin}/${_data.icon}`,
       tag: _data.tag,
-      // badge: _data.badge,
+      badge: `${self.location.origin}/${_data.badge}`,
       requireInteraction: true,
       actions: [
         {
